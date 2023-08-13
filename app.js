@@ -143,7 +143,7 @@ app.get("/accomodation_management", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/service_management", (req, res) => {
+app.get("/admin/service_management", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("service", {
       title: "service",
@@ -160,7 +160,7 @@ app.get("/service_management", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/our-holiday", (req, res) => {
+app.get("/admin/our-holiday", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("our_holiday.ejs", {
       title: "our-holiday",
@@ -176,7 +176,7 @@ app.get("/our-holiday", (req, res) => {
   }
 });
 
-app.post("/our-holiday", upload.single("imageData"), async (req, res) => {
+app.post("/admin/our-holiday", upload.single("imageData"), async (req, res) => {
   try {
     const {  title, location, description } = req.body;
     const imageFilePath = req.file.path;
@@ -193,7 +193,7 @@ app.post("/our-holiday", upload.single("imageData"), async (req, res) => {
   }
 });
 
-app.get("/our-holiday/getdata", async(req, res)=>{
+app.get("/admin/our-holiday/getdata", async(req, res)=>{
   try{
     const holidayResult = await pool.query('SELECT id , title, location, description, encode(imagedata, \'base64\') as imagedata FROM our_holiday_picks');
     const holidayRows = holidayResult.rows;
@@ -204,7 +204,7 @@ app.get("/our-holiday/getdata", async(req, res)=>{
   }
 })
 
-app.delete("/our-holiday/delete/:id", async (req, res) => {
+app.delete("/admin/our-holiday/delete/:id", async (req, res) => {
   const id = req.params.id;
   console.log("Received id for deletion:", id); // Add this line to check if the id is being received
 
@@ -237,7 +237,7 @@ app.get("/order_details", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/packages", (req, res) => {
+app.get("/admin/packages", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("package", {
       title: "package",
@@ -254,7 +254,7 @@ app.get("/packages", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/reviews", (req, res) => {
+app.get("/admin/reviews", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("404-page-not-found.ejs", {
       title: "404-page-not-found.ejs",
@@ -271,7 +271,7 @@ app.get("/reviews", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/subscriber", (req, res) => {
+app.get("/admin/subscriber", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("subscriber", {
       title: "subscriber",
@@ -288,7 +288,7 @@ app.get("/subscriber", (req, res) => {
   //res.render("index.ejs");
 });
 
-app.get("/settings", (req, res) => {
+app.get("/admin/settings", (req, res) => {
   if (req.isAuthenticated()) {
     res.render("settings", {
       title: "settings",
@@ -309,11 +309,11 @@ app.get("/404-page-not-found", (req, res) => {
   res.render("404-page-not-found.ejs");
 });
 
-app.get("/undefined", (req, res) => {
+app.get("/admin/undefined", (req, res) => {
   res.render("404-page-not-found.ejs");
 });
 
-app.get("/error", (req, res) => {
+app.get("/admin/error", (req, res) => {
   res.render("404-page-not-found.ejs");
 });
 
@@ -324,7 +324,7 @@ app.get("/add_user", (req, res) => {
 
 //----------------------------------------APIs For Register Admin and Update PSW Section Start-----------------------------------------//
 
-app.get("/register", (req, res) => {
+app.get("/admin/register", (req, res) => {
   if (req.isAuthenticated()) {
     res.redirect("/register");
   } else {
@@ -337,7 +337,7 @@ app.get("/register", (req, res) => {
 });
 
 app.post(
-  "/register",
+  "/admin/register",
   (req, res, next) => {
     //req.flash('message', 'You are already logged in.')
     //res.redirect('/profile')
@@ -365,12 +365,12 @@ app.post(
   },
   passport.authenticate("register", {
     successRedirect: "/",
-    failureRedirect: "/register",
+    failureRedirect: "/admin/register",
     failureFlash: true,
   })
 );
 
-app.get("/admin", (req, res) => {
+app.get("/admin/login", (req, res) => {
   if (req.isAuthenticated()) {
     req.flash("message", "Your are already logged in.");
     res.redirect("/");
@@ -383,7 +383,7 @@ app.get("/admin", (req, res) => {
   }
 });
 
-app.get("/connTest", async (req, res) => {
+app.get("/admin/connTest", async (req, res) => {
   console.log("Ok");
 
   const client = await pool.connect();
@@ -405,7 +405,7 @@ app.get("/connTest", async (req, res) => {
 });
 
 app.post(
-  "/login",
+  "/admin/login",
   (req, res, next) => {
     if (req.isAuthenticated()) {
       req.flash("message", "You are already logged in.");
@@ -415,7 +415,7 @@ app.post(
       let pass = req.body.password;
       if (user.length === 0 || pass.length === 0) {
         req.flash("message", "You must provide a username and password.");
-        res.redirect("/login");
+        res.redirect("/admin/login");
       } else {
         next();
       }
@@ -429,7 +429,7 @@ app.post(
   })
 );
 
-app.get("/logout", (req, res) => {
+app.get("/admin/logout", (req, res) => {
   if (req.isAuthenticated()) {
     console.log("User [" + req.user.username + "] has logged out.");
     req.logout(function(err) {
@@ -446,7 +446,7 @@ app.get("/logout", (req, res) => {
 
 
 app.post(
-  "/updpass",
+  "/admin/updpass",
   (req, res, next) => {
     if (req.isAuthenticated()) {
       let password = req.body.password;
@@ -487,7 +487,7 @@ app.post(
 //--------------------------------------------------------------API's Started----------------------------------------------------------//
 
 //===================================================Advertisement Section Start=======================================================//
-app.post("/add/advertisement", async (req, res) => {
+app.post("/admin/add/advertisement", async (req, res) => {
   var formData = new formidable.IncomingForm();
   formData.parse(req, function (error, fields, files) {
     var title = fields.title;
@@ -524,7 +524,7 @@ app.post("/add/advertisement", async (req, res) => {
   });
 });
 
-app.get("/advertisement/getdata", async (req, res) => {
+app.get("/admin/advertisement/getdata", async (req, res) => {
   pool.query(
     `SELECT * FROM advertisement where status='Active'`,
     (err, results) => {
@@ -762,7 +762,7 @@ app.get("/offer/delete", async (req, res) => {
 //   }
 // });
 
-app.post("/add/accomodation", async (req, res) => {
+app.post("/admin/add/accomodation", async (req, res) => {
   var formData = new formidable.IncomingForm();
   formData.parse(req, function (error, fields, files) {
 
@@ -813,7 +813,7 @@ app.post("/add/accomodation", async (req, res) => {
   })
 });
 
-app.get("/accomodation/getdata", async (req, res) => {
+app.get("/admin/accomodation/getdata", async (req, res) => {
   pool.query(`SELECT * FROM accomodation`, (err, results) => {
     if (err) {
       throw err;
