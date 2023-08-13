@@ -112,7 +112,7 @@
                                     </div>
 
                                     <!-- item-->
-                                    <a href="/settings" class="dropdown-item notify-item">
+                                    <a href="/admin/settings" class="dropdown-item notify-item">
                                         <i class="fe-settings"></i>
                                         <span>Settings</span>
                                     </a>
@@ -120,7 +120,7 @@
                                     <div class="dropdown-divider"></div>
 
                                     <!-- item-->
-                                    <a href="/logout" class="dropdown-item notify-item">
+                                    <a href="/admin/logout" class="dropdown-item notify-item">
                                         <i class="fe-log-out"></i>
                                         <span>Logout</span>
                                     </a>
@@ -171,20 +171,20 @@
                                         <li>
                                               <ul>
                                                 <li>
-                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="/our-holiday">Holiday Destination</a>
+                                                    <a href="/admin/our-holiday">Holiday Destination</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/offer">Add Offer</a>
+                                                    <a href="/admin/offer">Add Offer</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/contact">Contact</a>
+                                                    <a href="/admin/contact">Contact</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/reviews">Customer Review</a>
+                                                    <a href="/admin/reviews">Customer Review</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -198,10 +198,10 @@
                                         <li>
                                             <ul>
                                                 <li>
-                                                    <a href="/order_details">Order Details</a>
+                                                    <a href="/admin/order_details">Order Details</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/subscriber">Subscribers</a>
+                                                    <a href="/admin/subscriber">Subscribers</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -209,7 +209,7 @@
                                 </li>
 
                                 <li class="has-submenu">
-                                    <a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+                                    <a href="/admin/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
                                 </li>
                                 <!--<li class="has-submenu">
                                     <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
@@ -285,7 +285,7 @@
                                 </table>
                                 <script>
                                     function showData(){
-                                        const url1 = "/services/getdata";
+                                        const url1 = "/admin/services/getdata";
                                         fetch(url1)
                                             .then(function (response) {
                                                 return response.json();
@@ -334,7 +334,7 @@
                                                     '<td>'+ data[i].name +'</td>' +
                                                     '<td>'+ data[i].price +'</td>' +
                                                     '<td>'+ data[i].disc +'</td>' +
-                                                    '<td><img src="/services/cover/img'+ data[i].id +'.jpg" style="height :10vh; width: 10vhx"></td>' +
+                                                    '<td><img src="/admin/services/cover/img'+ data[i].id +'.jpg" style="height :10vh; width: 10vhx"></td>' +
                                                     '<td>' +
                                                         '<a href="#" id="'+ data[i].id +'" onclick="view(this.id)" class="btn btm-sm btn-info waves-effect"data-toggle="modal" data-target="#edit_view1"><i class="fas fa-pen"></i></a>' +
                                                     '</td>' +
@@ -357,7 +357,7 @@
                                         <h4 class="modal-title" id="myModalLabel">Add services</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                     </div>
-                                    <form action="/add/services" method="post" enctype="multipart/form-data">
+                                    <form action="/admin/add/services" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group row">
                                                 <div class="input-group col-md-6">
@@ -427,7 +427,7 @@
                             
                                 console.log(request_data);
                             
-                                const url2 = "/services/getdata/edit?id=" + request_data;
+                                const url2 = "/admin/services/getdata/edit?id=" + request_data;
                             
                                 fetch(url2)
                             
@@ -468,7 +468,7 @@
                                     $("#edit_disc").val(data[0].disc);
 
                                     $("#edit_image_id").append(
-                                        '<img src="/services/cover/img'+ data[0].id +'.jpg" style="height :200px; width: 100%">'
+                                        '<img src="/admin/services/cover/img'+ data[0].id +'.jpg" style="height :200px; width: 100%">'
                                     )
 
                                     /*==================================================Delete services=======================================================*/
@@ -493,7 +493,7 @@
                                         <h4 class="modal-title" id="myModalLabel">Edit services</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                     </div>
-                                    <form action="/update/services" method="post" enctype="multipart/form-data">
+                                    <form action="/admin/update/services" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
                                             <div class="form-group row">
                                                 <div class="input-group mb-3 col-sm-12">
@@ -577,7 +577,7 @@
                             var remove_building_id;
                         
                             function remove_building(clicked_id){
-                                const url3 = "/services/delete?id=" + clicked_id;
+                                const url3 = "/admin/services/delete?id=" + clicked_id;
 
                                 fetch(url3)
                                     .then(function () {

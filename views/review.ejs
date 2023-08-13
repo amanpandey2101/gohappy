@@ -116,7 +116,7 @@
                                     </div>
 
                                     <!-- item-->
-                                    <a href="/settings" class="dropdown-item notify-item">
+                                    <a href="/admin/settings" class="dropdown-item notify-item">
                                         <i class="fe-settings"></i>
                                         <span>Settings</span>
                                     </a>
@@ -124,7 +124,7 @@
                                     <div class="dropdown-divider"></div>
 
                                     <!-- item-->
-                                    <a href="/logout" class="dropdown-item notify-item">
+                                    <a href="/admin/logout" class="dropdown-item notify-item">
                                         <i class="fe-log-out"></i>
                                         <span>Logout</span>
                                     </a>
@@ -173,20 +173,20 @@
                                     <a href="#" style="color: white;"><i class="  fas fa-pen"></i>&nbsp;Site Manager<div class="arrow-down"></div></a>
                                       <ul>
                                                 <li>
-                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="/our-holiday">Holiday Destination</a>
+                                                    <a href="/admin/our-holiday">Holiday Destination</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/offer">Add Offer</a>
+                                                    <a href="/admin/offer">Add Offer</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/contact">Contact</a>
+                                                    <a href="/admin/contact">Contact</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/reviews">Customer Review</a>
+                                                    <a href="/admin/reviews">Customer Review</a>
                                                 </li>
                                             </ul>
                                 </li>
@@ -198,16 +198,16 @@
                                         <li>
                                             <ul>
                                                 <li>
-                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/service_management">Service Manage</a>
+                                                    <a href="/admin/service_management">Service Manage</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/contact">Contact Us</a>
+                                                    <a href="/admin/contact">Contact Us</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/subscriber">Subscribers</a>
+                                                    <a href="/admin/subscriber">Subscribers</a>
                                                 </li>
                                                 
                                             </ul>
@@ -218,10 +218,10 @@
                                     <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
                                 </li>-->
                                 <li class="has-submenu">
-                                    <a href="/tops" style="color: white;"><i class="fas fa-hotel"></i>&nbsp;Top Accomodation</a>
+                                    <a href="/admin/tops" style="color: white;"><i class="fas fa-hotel"></i>&nbsp;Top Accomodation</a>
                                 </li>
                                 <li class="has-submenu">
-                                    <a href="/offer" style="color: white;"><i class="fas fa-grin-beam"></i>&nbsp;Offers for you</a>
+                                    <a href="/admin/offer" style="color: white;"><i class="fas fa-grin-beam"></i>&nbsp;Offers for you</a>
                                 </li>
                             </ul> 
                             
@@ -298,7 +298,7 @@
                                 </table>
                                 <script>
                                     function showData(){
-                                        const url1 = "/review/getdata";
+                                        const url1 = "/admin/review/getdata";
                                         fetch(url1)
                                             .then(function (response) {
                                                 return response.json();
@@ -392,7 +392,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form action="/add/review" method="post">
+                                    <form action="/admin/add/review" method="post">
                                         <div class="row">
                                             <div class="input-group mb-3 col-sm-6 col-lg-6">
                                                 <input type="text" class="form-control" placeholder="Enter Your Name" name="name" id="name">
@@ -426,7 +426,7 @@
                     
                         console.log(request_data);
                     
-                        const url2 = "/review/getdata/edit?id=" + request_data;
+                        const url2 = "/admin/review/getdata/edit?id=" + request_data;
                     
                         fetch(url2)
                     
@@ -469,7 +469,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">                                                 
-                                    <form action="/update/review" method="post">
+                                    <form action="/admin/update/review" method="post">
                                         <div class="row">
                                             <div class="input-group mb-3 col-sm-12">
                                                 <input type="text" class="form-control" placeholder="Edit ID *" name="edit_id" id="edit_id" required readonly hidden>

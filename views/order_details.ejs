@@ -109,7 +109,7 @@
                                     </div>
 
                                     <!-- item-->
-                                    <a href="/settings" class="dropdown-item notify-item">
+                                    <a href="/admin/settings" class="dropdown-item notify-item">
                                         <i class="fe-settings"></i>
                                         <span>Settings</span>
                                     </a>
@@ -117,7 +117,7 @@
                                     <div class="dropdown-divider"></div>
 
                                     <!-- item-->
-                                    <a href="/logout" class="dropdown-item notify-item">
+                                    <a href="/admin/logout" class="dropdown-item notify-item">
                                         <i class="fe-log-out"></i>
                                         <span>Logout</span>
                                     </a>
@@ -168,20 +168,20 @@
                                         <li>
                                              <ul>
                                                 <li>
-                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="/our-holiday">Holiday Destination</a>
+                                                    <a href="/admin/our-holiday">Holiday Destination</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/offer">Add Offer</a>
+                                                    <a href="/admin/offer">Add Offer</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/contact">Contact</a>
+                                                    <a href="/admin/contact">Contact</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/reviews">Customer Review</a>
+                                                    <a href="/admin/reviews">Customer Review</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -195,10 +195,10 @@
                                         <li>
                                             <ul>
                                                 <li>
-                                                    <a href="/order_details">Order Details</a>
+                                                    <a href="/admin/order_details">Order Details</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/subscriber">Subscribers</a>
+                                                    <a href="/admin/subscriber">Subscribers</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -206,7 +206,7 @@
                                 </li>
 
                                 <li class="has-submenu">
-                                    <a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+                                    <a href="/admin/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
                                 </li>
                                 <!--<li class="has-submenu">
                                     <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
@@ -297,7 +297,7 @@
                                 </table>
                                 <script>
                                     function showData(){
-                                        const url1 = "/order-history/getdata";
+                                        const url1 = "/admin/order-history/getdata";
                                         fetch(url1)
                                             .then(function (response) {
                                                 return response.json();
@@ -358,7 +358,7 @@
                             
                                 console.log(request_data);
                             
-                                const url2 = "/order/child/details?client_id=" + request_data;
+                                const url2 = "/admin/order/child/details?client_id=" + request_data;
                             
                                 fetch(url2)
                             
@@ -381,7 +381,7 @@
                                     }
                                 })
 
-                                const url3 = "/order/client/details?client_id=" + request_data;
+                                const url3 = "/admin/order/client/details?client_id=" + request_data;
                             
                                 fetch(url3)
                             
