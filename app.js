@@ -370,7 +370,7 @@ app.post(
   })
 );
 
-app.get("/login", (req, res) => {
+app.get("/admin", (req, res) => {
   if (req.isAuthenticated()) {
     req.flash("message", "Your are already logged in.");
     res.redirect("/");
