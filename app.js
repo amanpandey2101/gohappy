@@ -51,7 +51,7 @@ const storage = multer.diskStorage({
     if (req.path === "/admin/our-holiday") {
       folder = "holiday";
     
-    } else if (req.path === "/offer") {
+    } else if (req.path === "/admin/offer") {
       folder = "offers";
     } else {
       folder = "uploads";
@@ -317,7 +317,7 @@ app.get("/admin/error", (req, res) => {
   res.render("404-page-not-found.ejs");
 });
 
-app.get("/add_user", (req, res) => {
+app.get("/admin/add_user", (req, res) => {
   res.render("add_user.ejs");
 });
 //------------------------END ROUTINGS FOR USER PANEL------------------------//
@@ -373,7 +373,7 @@ app.post(
 app.get("/admin/login", (req, res) => {
   if (req.isAuthenticated()) {
     req.flash("message", "Your are already logged in.");
-    res.redirect("/");
+    res.redirect("/admin");
   } else {
     res.render("login", {
       title: "Login",
