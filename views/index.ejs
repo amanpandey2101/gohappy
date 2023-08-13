@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard | Admin Pannel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/GoHappy (2).png">
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-stylesheet" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-stylesheet" rel="stylesheet" type="text/css" />
+        <style>
+            body
+            {   
+                background-color: #ffffff;
+                background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+            }
+            .card-box
+            {
+                background: rgba( 255, 255, 255, 0.8 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+                -webkit-backdrop-filter: blur( 4px );
+                border-radius: 10px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+            }
+
+        </style>
+    </head>
+
+    <body data-layout="horizontal" data-topbar="dark">
+        <!-- Pre-loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">Loading...</div>
+            </div>
+        </div>
+        <!-- End Preloader-->
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Navigation Bar-->
+            <header id="topnav">
+
+                <!-- Topbar Start -->
+                <div class="navbar-custom" style="background-color: #E6E6E6;">
+                    <div class="container-fluid">
+                        <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                            <li class="dropdown notification-list">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/user.png" alt="user-image" class="rounded-circle">
+                                    <span class="pro-user-name ml-1" style="color: black;">
+                                        Admin <i class="mdi mdi-chevron-down"></i> 
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Welcome !</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="/settings" class="dropdown-item notify-item">
+                                        <i class="fe-settings"></i>
+                                        <span>Settings</span>
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <!-- item-->
+                                    <a href="/logout" class="dropdown-item notify-item">
+                                        <i class="fe-log-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <!-- LOGO -->
+                        <div class="logo-box">
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-lg">
+                                    <img src="assets/images/gohappy.png" style="height: 8vh;">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/gohappy.png" style="height: 5vh; width:14vh">
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-lg">
+                                    <img src="assets/images/gohappy.png" style="height:8vh">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/gohappy.png" style="height: 5vh; width:14vh">
+                                </span>
+                            </a>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div> <!-- end container-fluid-->
+                </div>
+                <!-- end Topbar -->
+
+                <div class="topbar-menu" style="background-color: #191970;">
+                    <div class="container-fluid">
+                        <div id="navigation">
+                            <!-- Navigation Menu-->
+                            <ul class="navigation-menu" style="background-color: #191970;">
+
+                                <li class="has-submenu">
+                                    <a href="/" style="color: white;"><i class="ti-layout"></i>&nbsp;Dashboard</a>
+                                </li>
+                                
+                                <li class="has-submenu">
+                                    <a href="#" style="color: white;"><i class="fas fa-pen"></i>&nbsp;Site Manager<div class="arrow-down"></div></a>
+                                    <ul class="submenu megamenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                </li>
+                                               
+                                                <li>
+                                                    <a href="/our-holiday">Holiday Destination</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/offer">Add Offer</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/contact">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/reviews">Customer Review</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                              
+                                <li class="has-submenu">
+                                    <a href="#" style="color: white;"><i class=" fas fa-users-cog"></i>&nbsp;Views <div class="arrow-down"></div></a>
+                                    <ul class="submenu megamenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a href="/order_details">Order Details</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/subscriber">Subscribers</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-submenu">
+                                    <a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+                                </li>
+                                <!--<li class="has-submenu">
+                                    <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
+                                </li>-->
+                                <!--<li class="has-submenu">
+                                    <a href="/tops" style="color: white;"><i class="fas fa-hotel"></i>&nbsp;Top Accomodation</a>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="/offer" style="color: white;"><i class="fas fa-grin-beam"></i>&nbsp;Offers for you</a>
+                                </li>-->
+                            </ul> 
+                            
+                            <!-- End navigation menu -->
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- end #navigation -->
+                    </div>
+                    <!-- end container -->
+                </div>
+                <!-- end navbar-custom -->
+
+            </header>
+            <!-- End Navigation Bar-->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="page-title">Dashboard</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                            <li class="breadcrumb-item active" style="color: black;">Dashboard</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+
+                            <div class="col-xl-6 col-md-6 Card">
+                                <div class="card-box" onclick='window.location.href="/accomodation_management"' style="cursor: pointer;">
+
+                                    <h4 class="header-title mt-0 mb-4">Accomodation Management</h4>
+
+                                    <div class="widget-chart-1">
+                                        <div class="widget-chart-box-1 float-left" dir="ltr">
+                                            <i class=" fas fa-hotel" style="font-size: 50px;"></i>  
+                                        </div> 
+
+                                        <div class="widget-detail-1 text-right">
+                                            <h2 class="font-weight-normal pt-2 mb-1" id="aco_id"> </h2>
+                                            <p class="text-muted mb-1">Accomodation</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function showacoData(){
+                                        const url4 = "/accomodation/count/getdata";
+                                        fetch(url4)
+                                            .then(function (response) {
+                                                return response.json();
+                                            })
+                                            .then(function (data) {
+    
+                                                $("#aco_id").append(data[0].count);
+    
+                                            })
+                                            .catch(function (err) {
+                                                console.log('error: ' + err);
+                                            });
+                                    }
+                                </script>
+
+                            </div><!-- end col -->
+
+                            <div class="col-xl-6 col-md-6 Card">
+                                <div class="card-box" onclick='window.location.href="/service_management"' style="cursor: pointer;">
+
+                                    <h4 class="header-title mt-0 mb-4">Service Management</h4>
+
+                                    <div class="widget-chart-1">
+                                        <div class="widget-chart-box-1 float-left" dir="ltr">
+                                            <i class=" fas fa-user-tie" style="font-size: 50px;"></i>  
+                                        </div> 
+
+                                        <div class="widget-detail-1 text-right">
+                                            <h2 class="font-weight-normal pt-2 mb-1" id="services_id">  </h2>
+                                            <p class="text-muted mb-1">Services</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- end col -->
+
+                            <script>
+                                function showservicesData(){
+                                    const url3 = "/services/count/getdata";
+                                    fetch(url3)
+                                        .then(function (response) {
+                                            return response.json();
+                                        })
+                                        .then(function (data) {
+
+                                            $("#services_id").append(data[0].count);
+
+                                        })
+                                        .catch(function (err) {
+                                            console.log('error: ' + err);
+                                        });
+                                }
+                            </script>
+
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col-xl-6 col-md-6 Card">
+                                <div class="card-box" onclick='window.location.href="/subscriber"' style="cursor: pointer;">
+
+                                    <h4 class="header-title mt-0 mb-4">Subscriber</h4>
+
+                                    <div class="widget-chart-1">
+                                        <div class="widget-chart-box-1 float-left" dir="ltr">
+                                            <i class="fas fa-users" style="font-size: 50px;"></i>  
+                                        </div> 
+
+                                        <div class="widget-detail-1 text-right">
+                                            <h2 class="font-weight-normal pt-2 mb-1" id="subscriber_id">  </h2>
+                                            <p class="text-muted mb-1">Subscribers</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!-- end col -->
+
+                            <script>
+                                function showsubData(){
+                                    const url1 = "/subscriber/getdata/today";
+                                    fetch(url1)
+                                        .then(function (response) {
+                                            return response.json();
+                                        })
+                                        .then(function (data) {
+
+                                            $("#subscriber_id").append(data[0].count);
+
+                                        })
+                                        .catch(function (err) {
+                                            console.log('error: ' + err);
+                                        });
+                                }
+                            </script>
+
+                            <div class="col-xl-6 col-md-6 Card">
+                                <div class="card-box" onclick='window.location.href="/contact"' style="cursor: pointer;">
+
+                                    <h4 class="header-title mt-0 mb-4">Order Received</h4>
+
+                                    <div class="widget-chart-1">
+                                        <div class="widget-chart-box-1 float-left" dir="ltr">
+                                            <i class=" fas fa-phone-alt" style="font-size: 50px;"></i>  
+                                        </div> 
+
+                                        <div class="widget-detail-1 text-right">
+                                            <h2 class="font-weight-normal pt-2 mb-1" id="order_id">  </h2>
+                                            <p class="text-muted mb-1">Order Details</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                function showorderData(){
+                                    const url2 = "/contact/count/getdata";
+                                    fetch(url2)
+                                        .then(function (response) {
+                                            return response.json();
+                                        })
+                                        .then(function (data) {
+
+                                            $("#order_id").append(data[0].count);
+
+                                        })
+                                        .catch(function (err) {
+                                            console.log('error: ' + err);
+                                        });
+                                }
+                            </script>
+                        </div>
+                        <!-- end row --> 
+                        
+                    </div> <!-- container-fluid -->
+
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                               2021 &copy; Developed by <a href="https://mazesoftsolutions.com/">Gohppy</a> 
+                            </div>
+                            <div class="col-md-6">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar 
+        <div class="right-bar">
+            <div class="rightbar-title">
+                <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                    <i class="mdi mdi-close"></i>
+                </a>
+                <h4 class="font-16 m-0 text-white">Theme Customizer</h4>
+            </div>
+            <div class="slimscroll-menu rightbar-content">
+
+                <div class="p-3">
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Customize </strong> the overall color scheme, layout, etc.
+                    </div>
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/light.png" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
+                        <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/dark.png" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" 
+                            data-appStyle="assets/css/app-dark.min.css" />
+                        <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+    
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/rtl.png" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-3">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
+                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="assets/images/layouts/dark-rtl.png" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="custom-control custom-switch mb-5">
+                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-rtl-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" 
+                            data-appStyle="assets/css/app-dark-rtl.min.css" />
+                        <label class="custom-control-label" for="dark-rtl-mode-switch">Dark RTL Mode</label>
+                    </div>
+                </div>
+            </div>  end slimscroll-menu
+        </div>
+        /Right-bar -->
+
+        <!-- Right bar overlay
+        <div class="rightbar-overlay"></div>
+
+       <a href="javascript:void(0);" class="right-bar-toggle demos-show-btn">
+            <i class="mdi mdi-cog-outline mdi-spin"></i> &nbsp;Choose Theme
+        </a>-->
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- knob plugin -->
+        <script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+
+        <!--Morris Chart-->
+        <script src="assets/libs/morris-js/morris.min.js"></script>
+        <script src="assets/libs/raphael/raphael.min.js"></script>
+
+        <!-- Dashboard init js-->
+        <script src="assets/js/pages/dashboard.init.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>
+
+        <script>
+            showsubData();
+            showorderData();
+            showservicesData();
+            showacoData();
+        </script>
+        
+    </body>
+</html>

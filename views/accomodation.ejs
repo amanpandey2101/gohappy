@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Accomodation | Admin Pannel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/gohappy.png">
+
+        <!-- Custom box css -->
+        <link href="assets/libs/custombox/custombox.min.css" rel="stylesheet">
+
+        <link href="assets/libs/select2/select2.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- third party css -->
+        <link href="assets/libs/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/libs/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-stylesheet" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" id="app-stylesheet" rel="stylesheet" type="text/css" />
+
+        <!--Data Tables-->
+        <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="./plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+        <!--For Print
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.css"></script>
+        <script scr="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.map"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.css"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>-->
+
+        <!--Excel Sheet-->
+	    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+        <!--jQuery JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!--For Text Editor-->
+        <script src="./assets/ckeditor/ckeditor.js"></script>
+        <style>
+             body
+            {
+                background-color: #ffffff;
+                background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+            }
+            .Card
+            {
+                background: rgba( 255, 255, 255, 0.8 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+                -webkit-backdrop-filter: blur( 4px );
+                border-radius: 10px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+            }
+        </style>
+    </head>
+
+    <body data-layout="horizontal" data-topbar="dark">
+        <!-- Pre-loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">Loading...</div>
+            </div>
+        </div>
+        <!-- End Preloader-->
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Navigation Bar-->
+            <header id="topnav">
+
+                <!-- Topbar Start -->
+                <div class="navbar-custom" style="background-color: #E6E6E6;">
+                    <div class="container-fluid">
+                        <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                            <li class="dropdown notification-list">
+                                <!-- Mobile menu toggle-->
+                                <a class="navbar-toggle nav-link">
+                                    <div class="lines">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </a>
+                                <!-- End mobile menu toggle-->
+                            </li>
+
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/user.png" alt="user-image" class="rounded-circle">
+                                    <span class="pro-user-name ml-1" style="color: black;">
+                                        Admin <i class="mdi mdi-chevron-down"></i> 
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <!-- item-->
+                                    <div class="dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Welcome !</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="/settings" class="dropdown-item notify-item">
+                                        <i class="fe-settings"></i>
+                                        <span>Settings</span>
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <!-- item-->
+                                    <a href="/logout" class="dropdown-item notify-item">
+                                        <i class="fe-log-out"></i>
+                                        <span>Logout</span>
+                                    </a>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <!-- LOGO -->
+                        <div class="logo-box">
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-lg">
+                                    <img src="assets/images/gohappy.png" style="height: 8vh;">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/gohappy.png" style="height: 8vh;">
+                                </span>
+                            </a>
+                            <!--<a href="/" class="logo logo-dark">
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" style="height: 5vh;">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" style="height: 5vh;">
+                                </span>
+                            </a>-->
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div> <!-- end container-fluid-->
+                </div>
+                <!-- end Topbar -->
+
+                <div class="topbar-menu" style="background-color: #191970;">
+                    <div class="container-fluid">
+                        <div id="navigation">
+                            <!-- Navigation Menu-->
+                            <ul class="navigation-menu" style="background-color: #191970;">
+
+                                <li class="has-submenu">
+                                    <a href="/" style="color: white;"><i class="ti-layout"></i>&nbsp;Dashboard</a>
+                                </li>
+                                
+                                <li class="has-submenu">
+                                    <a href="#" style="color: white;"><i class="fas fa-pen"></i>&nbsp;Site Manager<div class="arrow-down"></div></a>
+                                    <ul class="submenu megamenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a href="/accomodation_management">Accomodation Manage</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/our-holiday">Holiday Destination</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/offer">Add Offer</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/contact">Contact</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/reviews">Customer Review</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                              
+                                <li class="has-submenu">
+                                    <a href="#" style="color: white;"><i class=" fas fa-users-cog"></i>&nbsp;Views <div class="arrow-down"></div></a>
+                                    <ul class="submenu megamenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a href="/order_details">Order Details</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/subscriber">Subscribers</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="has-submenu">
+                                    <a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+                                </li>
+                                <!--<li class="has-submenu">
+                                    <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
+                                </li>-->
+                                <!--<li class="has-submenu">
+                                    <a href="/tops" style="color: white;"><i class="fas fa-hotel"></i>&nbsp;Top Accomodation</a>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="/offer" style="color: white;"><i class="fas fa-grin-beam"></i>&nbsp;Offers for you</a>
+                                </li>-->
+                            </ul> 
+                            
+                            <!-- End navigation menu -->
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- end #navigation -->
+                    </div>
+                    <!-- end container -->
+                </div>
+                <!-- end navbar-custom -->
+
+            </header>
+            <!-- End Navigation Bar-->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="page-title">
+                                        Accomodation >> &nbsp;
+                                        <button href="#" class="btn btn-icon waves-effect btn-primary" data-toggle="modal" data-target="#add_accodomotion"> <i class="fas fa-edit"></i> Add accomodations</button> >> &nbsp;
+                                        <button href="#" class="btn btn-icon waves-effect btn-warning" data-toggle="modal" data-target="#add_images"> <i class="fa fa-image"></i> Add Images</button> >> &nbsp;
+                                        <span style="color: green;">Top Accomodation</span>
+                                    </h4>
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="/">Admin</a></li>
+                                            <li class="breadcrumb-item active" style="color: black;">Accomodation</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <table id="table_id" class="table table-bordered dt-responsive text-center nowrap Card" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Sl.No.</th>
+                                            <th>Category</th>
+                                            <th>Location</th>
+                                            <th>name</th>
+                                            <th>price (₹)</th>
+                                            <th>disc (%)</th>
+                                            <th>Cover Image</th>
+                                            <th>Action</th>
+                                            <th>Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody_id">
+                                        
+                                    </tbody>
+                                </table>
+                                <script>
+                                    function showData(){
+                                        const url1 = "/accomodation/getdata";
+                                        fetch(url1)
+                                            .then(function (response) {
+                                                return response.json();
+                                            })
+                                            .then(function (data) {
+                                                appendData1(data);
+                                                $(function () {
+                                                    $("#table_id").DataTable({
+                                                      "responsive": false, 
+                                                      "lengthChange": false, 
+                                                      "autoWidth": true,
+                                                      "buttons": ["excel"],
+                                                      "ordering": true,
+                                                      "paging": true,
+                                                      "lengthChange": true,
+                                                      "searching": true,
+                                                      "ordering": true,
+                                                      "info": true,
+                                                      "autoWidth": true,
+                                                      "responsive": true,
+                                                    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                                                    /*$('#example2').DataTable({
+                                                      "paging": true,
+                                                      "lengthChange": false,
+                                                      "searching": false,
+                                                      "ordering": false,
+                                                      "info": true,
+                                                      "autoWidth": true,
+                                                      "responsive": true,
+                                                    });*/
+                                                });
+                                            })
+                                            .catch(function (err) {
+                                                console.log('error: ' + err);
+                                            });
+                                    }
+                                
+                                    function appendData1(data){
+
+                                        var top;
+
+                                        for(var i=0; i<data.length; i++){
+
+                                            if(data[i].top == 'yes'){
+                                                top = '<span style="color: green;">'+ data[i].name +'</span>'
+                                            }
+                                            else{
+                                                top = '<span>'+ data[i].name +'</span>'
+                                            }
+
+                                            $('#tbody_id').append(
+                                                '<tr>' +
+                                                    '<td>'+ parseInt(i+1) +'</td>' +
+                                                    '<td>'+ data[i].category +'</td>' +
+                                                    '<td>'+ data[i].location +'</td>' +
+                                                    '<td>'+ top +'</td>' +
+                                                    '<td>'+ data[i].price +'</td>' +
+                                                    '<td>'+ data[i].disc +'</td>' +
+                                                    '<td><img src="/accomodation/cover/img'+ data[i].id +'.jpg" style="height :10vh; width: 10vhx"></td>' +
+                                                    '<td>' +
+                                                        '<a href="#" id="'+ data[i].id +'" onclick="view(this.id)" class="btn btm-sm btn-info waves-effect"data-toggle="modal" data-target="#edit_view1"><i class="fas fa-pen"></i></a>&nbsp;' +
+                                                        '<a href="#" id="'+ data[i].id +'" onclick="all_img_view(this.id)" class="btn btm-sm btn-warning waves-effect"data-toggle="modal" data-target="#edit_view2"><i class="fas fa-image"></i></a>' +
+                                                    '</td>' +
+                                                    '<td>' +
+                                                        '<a href="#" id="'+ data[i].id +'" onclick="view(this.id)" class="btn btm-sm btn-danger" data-toggle="modal" data-target="#confirm"> <i class="fas fa-trash"></i></a>' +
+                                                    '</td>' +
+                                                '</tr>'
+                                            );
+                                        }
+                                    }
+                                </script>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <!-- sample modal content -->
+                        <!--<div id="image" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <form action="">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">Add Images</h4>
+                                        <button type="button" aria-hidden="true" class="close" data-toggle="modal" data-target="#view_product3" data-dismiss="modal"><i class="fas fa-eye"></i></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="row top-buffer">
+                                                <div class="col-md-12">
+                                                    <input id="file-input" type="file" class="form-control" multiple accept="image/gif, image/jpeg, image/png">
+                                                        <div id="preview">
+
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary waves-effect">Submit</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>-->
+                    
+                        <!--<div id="view_product3" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="myModalLabel">All Images</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="row">
+                                                        <table  class="table table-bordered dt-responsive nowrap Card" style="width: 100%;">
+                                                            <thead>
+                                                                <th>Images</th>
+                                                                <th>Action</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="align-middle"><img src="img4.jpg" height="100px"></td>
+                                                                    <td class="align-middle"><button class="btm-sm btn btn-danger"  data-target="#confirm" data-toggle="modal"><i class="fas fa-trash"></i></button></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="align-middle"><img src="img5.jpg" height="100px"></td>
+                                                                    <td class="align-middle"><button class="btm-sm btn btn-danger"  data-target="#confirm" data-toggle="modal"><i class="fas fa-trash"></i></button></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="align-middle"><img src="img6.jpg" height="100px"></td>
+                                                                    <td class="align-middle"><button class="btm-sm btn btn-danger"  data-target="#confirm" data-toggle="modal"><i class="fas fa-trash"></i></button></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-light waves-effect" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary waves-effect" data-dismiss="modal">Save Changes</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--<script>
+                            function previewImages() {
+                 
+                                var preview = document.querySelector('#preview');
+                                           
+                                if (this.files) {
+                                  [].forEach.call(this.files, readAndPreview);
+                                }
+                 
+                                function readAndPreview(file) {
+                                
+                                    // Make sure `file.name` matches our extensions criteria
+                                    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                                        return alert(file.name + " is not an image");
+                                    } // else...
+
+                                    var reader = new FileReader();
+
+                                    reader.addEventListener("load", function() {
+                                        var image = new Image();
+                                        image.height = 100;
+                                        image.title  = file.name;
+                                        image.src    = this.result;
+                                        preview.appendChild(image);
+                                    });
+                                
+                                    reader.readAsDataURL(file);
+                                
+                                }
+                 
+                            }
+                            document.querySelector('#file-input').addEventListener("change", previewImages);
+                        </script>-->
+                    </div> <!-- container-fluid -->
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                               2021 &copy; Developed by <a href="https://mazesoftsolutions.com/">GoHappy</a> 
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-right footer-links d-none d-sm-block">
+                                    <a href="https://mazesoftsolutions.com/">About Us</a>
+                                    <a href="mannual.pdf" target="_blank">Help</a>
+                                    <a href="tel: +91 6296697930;">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+            
+            <!-- sample modal content -->
+
+            <div id="add_accodomotion" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Add Accomodation</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <form action="/add/accomodation" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <select class="form-control" name="category" aria-label="Default select example" id="category">
+                                            <option selected disabled>Select Category</option>
+                                            <option value="hotel">Hotel</option>
+                                            <option value="villa">Villa</option>
+                                            <option value="holiday">Holiday Package</option>
+                                            <option value="visa">Visa</option>
+                                            <option value="umrah">Umrah</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <input type="number" class="form-control" placeholder="Add Price (₹)*" name="price" id="price" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="Add Name *" name="name" id="name" required>
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <input type="number" class="form-control" placeholder="Add discount (%)" name="disc" id="disc">
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <div class="input-group col-sm-4">
+                                        <label class="custom-file-label" for="customFile">Choose Images</label>
+                                        <input type="file" class="custom-file-input" accept="image/*" name="img" id="customFile" onchange="display(this)" required>
+                                        <img id="blah" src="#" alt="your image" style="width: 100%"/>
+                                    </div>
+                                    <script>
+                                        function display(input) {
+                                            if (input.files && input.files[0]) {
+                                                var reader = new FileReader();
+        
+                                                reader.onload = function (e) {
+                                                $('#blah').attr('src', e.target.result).height(200);
+                                                };
+        
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
+                                    <div class="form-group col-md-4">
+                                        <select class="form-control" name="top_accomodation" aria-label="Default select example" id="top_accomodation">
+                                            <option selected disabled>Top Accomodation</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <input type="text" class="form-control" placeholder="Add Location *" name="location" id="location" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row"> 
+                                    <div class="input-group mb-3 col-sm-12 col-lg-12">
+                                        <textarea class="form-control" rows="3" id="description" name="description" placeholder="Enter Description here" required></textarea>
+                                    </div>   
+                                </div> 
+                            </div>  
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><i class="fa fa-window-close"></i>&nbsp;Close</button>
+                                <button type="submit" class="btn btn-primary waves-effect">Submit</button>
+                            </div>
+                        </form>
+                        <script>
+                            // Replace the <textarea> with a CKEditor
+                            CKEDITOR.replace('description');
+                        </script>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+                        
+            <script>
+                var request_data;
+            
+                function view(clicked_id){
+                
+                    request_data = clicked_id;
+                
+                    console.log(request_data);
+                
+                    const url2 = "/accomodation/getdata/edit?id=" + request_data;
+                
+                    fetch(url2)
+                
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        
+                        $("#edit_id").empty();
+                        $("#edit_category").empty();
+                        $("#edit_price").empty();
+                        $("#edit_description").empty();
+                        $("#edit_name").empty();
+                        $("#edit_disc").empty();
+                        $("#building_category_id").empty();
+                        $("#top_accomodation_id").empty();
+                        $("#edit_location").empty();
+                        $('#edit_image_id').empty();
+
+                        $("#edit_id").val(data[0].id);
+                        $("#edit_category").val(data[0].category);
+                        $("#edit_price").val(data[0].price);
+                        $("#edit_description").val(data[0].description);
+                        $("#edit_name").val(data[0].name);
+                        var building_category;
+                
+                        if(data[0].category == 'hotel'){
+                            building_category = '<input type="radio" id="edit_category" name="edit_category" value="hotel" checked> Hotel '+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="villa"> Villa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="holiday"> Holiday' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="visa"> Visa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="umrah"> Umrah';
+                        }
+                        if(data[0].category == 'villa'){
+                            building_category = '<input type="radio" id="edit_category" name="edit_category" value="hotel"> Hotel '+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="villa" checked> Villa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="holiday" checked> Holiday' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="visa" checked> Visa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="umrah"> Umrah';
+                        }
+                        if(data[0].category == 'holiday'){
+                            building_category = '<input type="radio" id="edit_category" name="edit_category" value="hotel" style="margin-top:10px"> Hotel '+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="villa"> Villa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="holiday" checked> Holiday'+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="visa"> Visa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="umrah"> Umrah' ;
+                        }
+                        if(data[0].category == 'visa'){
+                            building_category = '<input type="radio" id="edit_category" name="edit_category" value="hotel"> Hotel '+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="villa"> Villa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="holiday" checked> Holiday'+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="visa" checked> Visa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="umrah"> Umrah' ;
+                        }
+                        if(data[0].category == 'umrah'){
+                            building_category = '<input type="radio" id="edit_category" name="edit_category" value="hotel"> Hotel '+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="villa"> Villa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="holiday" > Holiday'+
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="visa"> Visa' +
+                                              '&nbsp;|| <input type="radio" id="edit_category" name="edit_category" value="umrah" checked> Umrah' ;
+                        }
+                        $("#building_category_id").append(
+                            building_category
+                        )
+                        var top_accomodation;
+                        if(data[0].top == 'yes'){
+                            top_accomodation = '<input type="radio" id="edit_top" name="edit_top" value="yes" checked> Yes '+
+                                                '|| <input type="radio" id="edit_top" name="edit_top" value="no"> No';
+                        }
+                        if(data[0].top == 'no'){
+                            top_accomodation = '<input type="radio" id="edit_top" name="edit_top" value="yes"> Yes '+
+                                                '|| <input type="radio" id="edit_top" name="edit_top" value="no" checked> No';
+                        }
+                        $("#top_accomodation_id").append(
+                            top_accomodation
+                        )
+                        $("#edit_image_id").append(
+                            '<img src="/accomodation/cover/img'+ data[0].id +'.jpg" style="height :200px; width: 100%">'
+                        )
+                        $("#edit_disc").val(data[0].disc);
+                        $("#edit_location").val(data[0].location);
+                        /*==================================================Delete accomodation=======================================================*/
+                        $("#building_delete_footer").empty();
+
+                        $("#building_delete_footer").append(
+                            '<button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><i class="fas fa-window-close"></i>&nbsp;Close</button>' +
+                            '<button type="button" id="'+ data[0].id +'" onclick="remove_building(this.id)" class="btn btn-outline-danger waves-effect" data-dismiss="modal"><i class="fas fa-trash"></i>&nbsp;Yes</button>'
+                        );
+
+                    })
+                    .catch(function (err) {
+                        console.log('error: ' + err);
+                    });           
+                }
+            </script>
+
+            <div id="edit_view1" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Edit accomodation</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <form action="/update/accomodation" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="form-group row">
+                                    <div class="input-group col-md-12">
+                                        <input type="text" class="form-control" placeholder="Edit ID *" name="edit_id" id="edit_id" required readonly hidden>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col-md-6" style="display: block;" id="building_category_id">
+                                        
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="Edit Building Name *" name="edit_name" id="edit_name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col-md-4">
+                                        <input type="number" class="form-control" placeholder="Edit Price (₹)*" name="edit_price" id="edit_price">
+                                    </div>
+                                    <div class="input-group col-md-4">
+                                        <input type="number" class="form-control" placeholder="Edit discount (%)" name="edit_disc" id="edit_disc">
+                                    </div>
+                                    <div class="input-group col-md-4">
+                                        <input type="text" class="form-control" placeholder="Edit Location" name="edit_location" id="edit_location">
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <div class="input-group col-sm-6">
+                                        <label class="custom-file-label" for="customFile2">Choose Images</label>
+                                        <input type="file" class="custom-file-input" accept="image/*" name="edit_img" id="customFile2" onchange="display2(this)" required>
+                                        <div id="edit_image_id">
+                                        
+                                        </div>
+                                        <!-- <img id="edit_blah" src="#" alt="your image" style="width: 100%"/> -->
+                                    </div>
+                                    <script>
+                                        function display2(input) {
+                                            if (input.files && input.files[0]) {
+                                                var reader = new FileReader();
+        
+                                                reader.onload = function (e) {
+                                                    $('#edit_image_id').empty();
+                                                    $('#edit_blah').attr('src', e.target.result).height(200);
+                                                };
+        
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
+                                    <div class="form-group col-md-6" id="top_accomodation_id">
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group row"> 
+                                    <div class="input-group mb-3 col-sm-12 col-lg-12">
+                                        <textarea class="form-control" rows="10" id="edit_description" name="edit_description" placeholder="Enter Description here" required></textarea>
+                                    </div>   
+                                </div> 
+                            </div>  
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><i class="fa fa-window-close"></i>&nbsp;Close</button>
+                                <button type="submit" class="btn btn-primary waves-effect">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                function all_img_view(clicked_id){
+
+                    const url8 = "/accomodation/all/images/getdata/edit?id=" + clicked_id;
+                
+                    fetch(url8)
+            
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+
+                            $('#img_tbody_id tr').remove();
+                        
+                            for(var i=0; i<data.length; i++){
+                                $('#img_tbody_id').append(
+                                    '<tr>' +
+                                        '<td>'+ parseInt(i+1) +'</td>' +
+                                        '<td>'+ data[i].tag_name +'</td>' +
+                                        '<td><img src="/accomodation/all/img'+ data[i].id +'.jpg" style="height :10vh; width: 10vhx"></td>' +
+                                        '<td>' +
+                                            '<a href="#" id="'+ data[i].id +'" onclick="remove_option(this.id)" class="btn btm-sm btn-danger" data-toggle="modal" data-target="#confirm_del_img" data-dismiss="modal"> <i class="fas fa-trash"></i></a>' +
+                                        '</td>' +
+                                    '</tr>'
+                                );
+                            }
+
+                        })
+                        .catch(function (err) {
+                            console.log('error: ' + err);
+                        });
+                    }
+
+                function remove_option(clicked_id){
+                    const url9 = "/accomodation/all/images/getdata/edit/by/id?id=" + clicked_id;
+                    
+                    fetch(url9)
+                    
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        $("#img_delete_footer").empty();
+                        $("#img_delete_footer").append(
+                                '<button type="button" class="btn btn-light waves-effect" data-dismiss="modal" data-toggle="modal" data-target="#edit_view2"><i class="fas fa-window-close"></i>&nbsp;Close</button>' +
+                                '<button type="button" id="'+ data[0].id +'" onclick="remove_img_building(this.id)" class="btn btn-outline-danger waves-effect" data-dismiss="modal"><i class="fas fa-trash"></i>&nbsp;Yes</button>'
+                                );
+
+                            })
+                        .catch(function (err) {
+                            console.log('error: ' + err);
+                        });
+                }
+            </script>
+            <div id="edit_view2" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">All Pictures of this Accomodation</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <table id="img_table_id" class="table table-bordered dt-responsive text-center nowrap Card" style="width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Sl.No.</th>
+                                        <th>Tag</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="img_tbody_id">
+                                    
+                                </tbody>
+                            </table>
+                        </div>  
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><i class="fa fa-window-close"></i>&nbsp;Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="confirm_del_img" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">NAT ask that...</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="modal" data-target="#edit_view2">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>
+                                Are you sure want to remove this item?
+                            </h3>
+                        </div>
+                        <div class="modal-footer" id="img_delete_footer">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>                        
+                function remove_img_building(clicked_id){
+                    const url30 = "/accomodation/all/img/delete?id=" + clicked_id;
+                    fetch(url30)
+                        .then(function () {
+                            //return response.json();
+                        })
+                        .then(function () {
+                            $("#tbody_id tr").remove();
+                            location.reload();
+                        })
+                    .catch(function (err) {
+                        console.log('error: ' + err);
+                    });
+                
+                }
+            </script>
+
+            <div id="confirm" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">NAT ask that...</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>
+                                Are you sure want to remove this item?
+                            </h3>
+                        </div>
+                        <div class="modal-footer" id="building_delete_footer">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var remove_building_id;
+            
+                function remove_building(clicked_id){
+                    const url3 = "/accomodation/delete?id=" + clicked_id
+                    fetch(url3)
+                        .then(function () {
+                            //return response.json();
+                        })
+                        .then(function () {
+                            $("#tbody_id tr").remove();
+                            location.reload();
+                        })
+                    .catch(function (err) {
+                        console.log('error: ' + err);
+                    });
+                
+                }
+            </script>
+
+            <div id="add_images" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Add Images</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <form action="/add/accomodation/all/images" method="post" enctype="multipart/form-data">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                    <select class="form-control" name="accomodation_name" aria-label="Default select example" id="accomodation_name_id">
+                                        <option selected disabled>Select Existing Accomodation</option>
+                                    </select>
+                                    <script>
+                                        const url12 = "/accomodation/getdata";
+                                    
+                                        fetch(url12)
+                                            .then(function (response) {
+                                                return response.json();
+                                            })
+                                            .then(function (data) {
+                                                appendData6(data);
+                                            })
+                                            .catch(function (err) {
+                                                console.log('error: ' + err);
+                                            });
+                                        
+                                            function appendData6(data) {
+                                                var id;
+                                                var daySelect;
+                                                var myOption;
+                                                for (var i = 0; i < data.length; i++) {
+                                                    id = data[i].id;
+                                                    daySelect = document.getElementById("accomodation_name_id");
+                                                    myOption = document.createElement("option");
+                                                    myOption.text = data[i].name ;
+                                                    myOption.value = data[i].id;
+                                                    daySelect.add(myOption);
+                                                }
+                                            }
+                                        </script>
+                                    </div>
+                                    <div class="input-group col-md-6">
+                                        <input type="text" class="form-control" placeholder="Add image tag line*" name="tag_name" id="tag_name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="input-group col-sm-12">
+                                        <label class="custom-file-label" for="customFile">Choose Images</label>
+                                        <input type="file" class="custom-file-input" accept="image/*" name="all_img" id="customFile" onchange="display5(this)" required>
+                                            <img id="blah5" src="#" alt="your image" style="width: 100%"/>
+                                    </div>
+                                    <script>
+                                        function display5(input) {
+                                            if (input.files && input.files[0]) {
+                                                var reader = new FileReader();
+
+                                                reader.onload = function (e) {
+                                                $('#blah5').attr('src', e.target.result).height(300);
+                                                };
+
+                                                reader.readAsDataURL(input.files[0]);
+                                            }
+                                        }
+                                    </script>
+                                </div>  
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light waves-effect" data-dismiss="modal"><i class="fa fa-window-close"></i>&nbsp;Close</button>
+                                <button type="submit" class="btn btn-primary waves-effect">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!--<a href="javascript:void(0);" class="right-bar-toggle demos-show-btn">
+            <i class="mdi mdi-cog-outline mdi-spin"></i> &nbsp;Choose Theme
+        </a>-->
+
+        <!-- Vendor js -->
+        <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Modal-Effect -->
+        <script src="assets/libs/custombox/custombox.min.js"></script>
+
+        <!-- App js -->
+        <script src="assets/js/app.min.js"></script>    
+        
+        <!-- Validation js (Parsleyjs) -->
+        <script src="assets/libs/parsleyjs/parsley.min.js"></script>
+
+        <!-- validation init -->
+        <script src="assets/js/pages/form-validation.init.js"></script>
+
+        <!-- third party js -->
+        <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.bootstrap4.js"></script>
+        <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+        <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+        <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+        <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+        <script src="assets/libs/datatables/buttons.print.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+        <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+        <script src="assets/libs/pdfmake/pdfmake.min.js"></script>
+        <script src="assets/libs/pdfmake/vfs_fonts.js"></script>
+        <!-- third party js ends -->
+
+        <!-- Datatables init -->
+        <script src="assets/js/pages/datatables.init.js"></script>
+
+        <!-- Plugins Js -->
+        <script src="assets/libs/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+        <script src="assets/libs/switchery/switchery.min.js"></script>
+        <script src="assets/libs/multiselect/jquery.multi-select.js"></script>
+        <script src="assets/libs/jquery-quicksearch/jquery.quicksearch.min.js"></script>
+
+        <script src="assets/libs/select2/select2.min.js"></script>
+
+        <script>
+            showData();
+        </script>
+    </body>
+</html>
