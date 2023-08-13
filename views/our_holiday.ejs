@@ -66,7 +66,7 @@
         <script>
 			// Function to fetch data and populate the table
 			function showData() {
-			  const url = "/admin/our-holiday/getdata";
+			  const url = "/our-holiday/getdata";
 			  fetch(url)
 				.then(function (response) {
 				  if (!response.ok) {
@@ -118,7 +118,7 @@
 		  
 			// Function to handle the delete confirmation when "Yes, Delete" is clicked
 			function deleteConfirmed(id) {
-			  const url = `/admin/our-holiday/delete/${id}`;
+			  const url = `/our-holiday/delete/${id}`;
 			  fetch(url, {
 				method: "DELETE",
 			  })
@@ -248,20 +248,20 @@
 									<li>
 										  <ul>
                                                 <li>
-                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="/admin/our-holiday">Holiday Destination</a>
+                                                    <a href="/our-holiday">Holiday Destination</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/offer">Add Offer</a>
+                                                    <a href="/offer">Add Offer</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/contact">Contact</a>
+                                                    <a href="/contact">Contact</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/reviews">Customer Review</a>
+                                                    <a href="/reviews">Customer Review</a>
                                                 </li>
                                             </ul>
 									</li>
@@ -275,10 +275,10 @@
 									<li>
 										<ul>
 											<li>
-												<a href="/admin/order_details">Order Details</a>
+												<a href="/order_details">Order Details</a>
 											</li>
 											<li>
-												<a href="/admin/subscriber">Subscribers</a>
+												<a href="/subscriber">Subscribers</a>
 											</li>
 										</ul>
 									</li>
@@ -286,7 +286,7 @@
 							</li>
 
 							<li class="has-submenu">
-								<a href="/admin/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+								<a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
 							</li>
 							<!--<li class="has-submenu">
 								<a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
@@ -360,7 +360,7 @@
 							</div>
 							<div class="modal-body">
 							  <!-- Form -->
-							  <form class="needs-validation" action="/admin/our-holiday" method="POST" novalidate enctype="multipart/form-data">
+							  <form class="needs-validation" action="/our-holiday" method="POST" novalidate enctype="multipart/form-data">
 								<div class="form-group">
 								  <label for="imageData">Image File:</label>
 								  <input type="file" class="form-control-file" id="imageData" name="imageData" required>

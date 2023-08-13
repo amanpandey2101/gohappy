@@ -110,7 +110,7 @@
                                     </div>
 
                                     <!-- item-->
-                                    <a href="/admin/settings" class="dropdown-item notify-item">
+                                    <a href="/settings" class="dropdown-item notify-item">
                                         <i class="fe-settings"></i>
                                         <span>Settings</span>
                                     </a>
@@ -118,7 +118,7 @@
                                     <div class="dropdown-divider"></div>
 
                                     <!-- item-->
-                                    <a href="/admin/logout" class="dropdown-item notify-item">
+                                    <a href="/logout" class="dropdown-item notify-item">
                                         <i class="fe-log-out"></i>
                                         <span>Logout</span>
                                     </a>
@@ -167,20 +167,20 @@
                                     <a href="#" style="color: white;"><i class="fas fa-pen"></i>&nbsp;Site Manager<div class="arrow-down"></div></a>
                                       <ul>
                                                 <li>
-                                                    <a href="/admin/accomodation_management">Accomodation Manage</a>
+                                                    <a href="/accomodation_management">Accomodation Manage</a>
                                                 </li>
                                                
                                                 <li>
-                                                    <a href="/admin/our-holiday">Holiday Destination</a>
+                                                    <a href="/our-holiday">Holiday Destination</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/offer">Add Offer</a>
+                                                    <a href="/offer">Add Offer</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/contact">Contact</a>
+                                                    <a href="/contact">Contact</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/reviews">Customer Review</a>
+                                                    <a href="/reviews">Customer Review</a>
                                                 </li>
                                             </ul>
                                 </li>
@@ -192,10 +192,10 @@
                                         <li>
                                             <ul>
                                                 <li>
-                                                    <a href="/admin/order_details">Order Details</a>
+                                                    <a href="/order_details">Order Details</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/admin/subscriber">Subscribers</a>
+                                                    <a href="/subscriber">Subscribers</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -203,7 +203,7 @@
                                 </li>
 
                                 <li class="has-submenu">
-                                    <a href="/admin/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
+                                    <a href="/logout" style="color: white;"><i class="fe-log-out"></i>&nbsp;Logout</a>
                                 </li>
                                 <!--<li class="has-submenu">
                                     <a href="/vendor_management" style="color: white;"><i class="fas fa-user-tie"></i>&nbsp;Vendor List</a>
@@ -378,7 +378,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <form action="/admin/add/subscriber" method="post">
+                                    <form action="/add/subscriber" method="post">
                                         <div class="row">
                                             <div class="input-group mb-3 col-sm-6 col-lg-6">
                                                 <input type="date" class="form-control" placeholder="Enter Your date" name="date" id="date">
@@ -408,7 +408,7 @@
                     
                         console.log(request_data);
                     
-                        const url2 = "/admin/subscriber/getdata/edit?id=" + request_data;
+                        const url2 = "/subscriber/getdata/edit?id=" + request_data;
                     
                         fetch(url2)
                     
@@ -451,7 +451,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">                                                 
-                                    <form action="/admin/update/subscriber" method="post">
+                                    <form action="/update/subscriber" method="post">
                                         <div class="row">
                                             <div class="input-group mb-3 col-sm-12">
                                                 <input type="text" class="form-control" placeholder="Edit ID *" name="edit_id" id="edit_id" required readonly hidden>
@@ -501,7 +501,7 @@
                 
                     function remove_building(clicked_id){
                         
-                                const url3 = "/admin/subscriber/delete?id=" + clicked_id;
+                                const url3 = "/subscriber/delete?id=" + clicked_id;
 
                                 fetch(url3)
                                     .then(function () {
